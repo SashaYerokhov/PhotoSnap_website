@@ -1,90 +1,234 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Photosnap Website Challenge</title>
-  <link rel="stylesheet" href="./css/normalize.css">
-  <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
-<header class="header container">
-    Stories
-  Features
-  Pricing
-</header>
-<main class="main">
- Get an invite
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
 
-  Create and share your photo Stories
-
-  Photosnap is a platform for photographers and visual storytellers. We make it 
-  easy to share photos, tell stories and connect with others.
-
-  Beautiful stories every time
-  
-  We provide design templates to ensure your stories look terrific. Easily add 
-  photos, text, embed maps and media from other networks. Then share your story 
-  with everyone.
-
-  View the stories
-
-  Designed for everyone
-
-  Photosnap can help you create stories that resonate with your audience.  Our 
-  tool is designed for photographers of all levels, brands, businesses you name it. 
-
-  View the stories
-
-  The Mountains
-  by John Appleseed
-  Read Story
-
-  Sunset Cityscapes
-  by Benjamin Cruz
-  Read Story
-
-  18 Days Voyage
-  by Alexei Borodin
-  Read Story
-
-  Architecturals
-  by Samantha Brooke
-  Read Story
-
-  100% Responsive
-
-  No matter which the device you’re on, our site is fully responsive and stories 
-  look beautiful on any screen.
-
-  No Photo Upload Limit
-
-  Our tool has no limits on uploads or bandwidth. Freely upload in bulk and 
-  share all of your stories in one go.
-
-  Available to Embed
-
-  Embed Tweets, Facebook posts, Instagram media, Vimeo or YouTube videos, 
-  Google Maps, and more. 
-</main>
-
-
- 
-
-  <footer class="footer container">
-      Home
-  Stories
-  Features
-  Pricing
-
-  Get an invite
-
-  Copyright 2019. All Rights Reserved
-
-  </footer>
-  <script src="app.js" defer></script>
-</body>
+    <title>Frontend Mentor | Photosnap Website Challenge</title>
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header class="header container">
+      <div class="header__logo">
+        <a href="#"
+          ><img src="./assets/shared/desktop/logo.svg" alt="logo photo snap"
+        /></a>
+      </div>
+      <button
+        class="menu__button open__button"
+        aria-label="open Menu"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="6">
+          <g fill-rule="evenodd"><path d="M0 0h20v1H0zM0 5h20v1H0z" /></g>
+        </svg>
+      </button>
+      <button class="menu__button close__button" aria-label="close Memu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15">
+          <path
+            fill-rule="evenodd"
+            d="M14.718.075l.707.707L8.707 7.5l6.718 6.718-.707.707L8 8.207l-6.718 6.718-.707-.707L7.293 7.5.575.782l.707-.707L8 6.793 14.718.075z"
+          />
+        </svg>
+      </button>
+      <div class="header__block" id="navbar">
+        <nav>
+          <ul>
+            <li>
+              <a href="stories.html">Stories</a>
+            </li>
+            <li>
+              <a href="features.html">Features</a>
+            </li>
+            <li>
+              <a href="pricing.html">Pricing</a>
+            </li>
+          </ul>
+        </nav>
+        <button class="btn">Get an invite</button>
+      </div>
+      <div id="overlay" aria-hidden="true"></div>
+    </header>
+    <main class="main">
+      <section class="main__hero">
+        <div class="create__hero">
+          <div class="create__hero-content">
+            <h2>Create and share your photo Stories.</h2>
+            <p>
+              Photosnap is a platform for photographers and visual storytellers.
+              We make it easy to share photos, tell stories and connect with
+              others.
+            </p>
+            <a href="#">Get an invite</a>
+          </div>
+          <picture class="home__picture">
+            <source
+              media="(min-width: 1024px)"
+              srcset="./assets/home/desktop/create-and-share.jpg"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcset="./assets/home/tablet/create-and-share.jpg"
+            />
+            <!-- Для мобильных (по умолчанию) -->
+            <img
+              src="./assets/home/mobile/create-and-share.jpg"
+              alt="image hero create and share"
+              class="hero__img"
+            />
+          </picture>
+        </div>
+        <div class="stories__hero">
+          <picture class="home__picture">
+            <source
+              media="(min-width: 1024px)"
+              srcset="./assets/home/desktop/beautiful-stories.jpg"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcset="./assets/home/tablet/beautiful-stories.jpg"
+            />
+            <!-- Для мобильных (по умолчанию) -->
+            <img
+              src="./assets/home/mobile/beautiful-stories.jpg"
+              alt="image hero beautiful stories"
+              class="hero__img"
+            />
+          </picture>
+          <div class="create__stories-content">
+            <h2>Beautiful stories every time</h2>
+            <p>
+              We provide design templates to ensure your stories look terrific.
+              Easily add photos, text, embed maps and media from other networks.
+              Then share your story with everyone.
+            </p>
+            <a href="#">View the stories</a>
+          </div>
+        </div>
+        <div class="designed__hero">
+          <div class="create__designed-content">
+            <h2>Designed for everyone</h2>
+            <p>
+              Photosnap can help you create stories that resonate with your
+              audience. Our tool is designed for photographers of all levels,
+              brands, businesses you name it.
+            </p>
+            <a href="#"> View the stories </a>
+          </div>
+          <picture class="home__picture">
+            <source
+              media="(min-width: 1024px)"
+              srcset="./assets/home/desktop/designed-for-everyone.jpg"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcset="./assets/home/tablet/designed-for-everyone.jpg"
+            />
+            <!-- Для мобильных (по умолчанию) -->
+            <img
+              src="./assets/home/mobile/designed-for-everyone.jpg"
+              alt="image hero designed for everyone"
+              class="hero__img"
+            />
+          </picture>
+        </div>
+      </section>
+      <section class="collections">
+        <a href="#" class="collections__links">
+          <picture>
+            <source
+              media="(min-width: 1024px)"
+              srcset="./assets/stories/mobile/mountains.jpg"
+            />
+            <!-- Для мобильных (по умолчанию) -->
+            <img
+              src="./assets/stories/mobile/mountains.jpg"
+              alt="image hero mountains"
+              class="hero__img"
+            />
+          </picture>
+          <div class="collections__content">
+            <h4>The Mountains</h4>
+            <p>by John Appleseed</p>
+            <span>Read Story</span>
+          </div>
+        </a>
+        <a href="#" class="collections__links">
+          <picture>
+            <source
+              media="(min-width: 1024px)"
+              srcset="./assets/stories/mobile/cityscapes.jpg"
+            />
+            <img
+              src="./assets/stories/mobile/cityscapes.jpg"
+              alt="image hero cityscapes"
+              class="hero__img"
+            />
+          </picture>
+          <div class="collections__content">
+            <h4>Sunset Cityscapes</h4>
+            <p>by Benjamin Cruz</p>
+            <span>Read Story</span>
+          </div>
+        </a>
+        <a href="#" class="collections__links">
+          <picture>
+            <source
+              media="(min-width: 1024px)"
+              srcset="./assets/stories/mobile/18-days-voyage.jpg"
+            />
+            <img
+              src="./assets/stories/mobile/18-days-voyage.jpg"
+              alt="image hero 18 days voyage"
+              class="hero__img"
+            />
+          </picture>
+          <div class="collections__content">
+            <h4>18 Days Voyage</h4>
+            <p>by Alexei Borodin</p>
+            <span>Read Story</span>
+          </div>
+        </a>
+        <a href="#" class="collections__links">
+          <picture>
+            <source
+              media="(min-width: 1024px)"
+              srcset="./assets/stories/mobile/architecturals.jpg"
+            />
+            <img
+              src="./assets/stories/mobile/architecturals.jpg"
+              alt="image hero architecturals"
+              class="hero__img"
+            />
+          </picture>
+          <div class="collections__content">
+            <h4>Architecturals</h4>
+            <p>by Samantha Brooke</p>
+            <span>Read Story</span>
+          </div>
+        </a>
+      </section>
+      <!-- Видео про нестинг - посмотреть какой сайт использовал автор -->
+      100% Responsive No matter which the device you’re on, our site is fully
+      responsive and stories look beautiful on any screen. No Photo Upload Limit
+      Our tool has no limits on uploads or bandwidth. Freely upload in bulk and
+      share all of your stories in one go. Available to Embed Embed Tweets,
+      Facebook posts, Instagram media, Vimeo or YouTube videos, Google Maps, and
+      more.
+    </main>
+    <footer class="footer container">
+      Home Stories Features Pricing Get an invite Copyright 2019. All Rights
+      Reserved
+    </footer>
+    <script src="app.js" defer></script>
+  </body>
 </html>
