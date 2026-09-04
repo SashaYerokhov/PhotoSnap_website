@@ -32,3 +32,16 @@ document.addEventListener("DOMContentLoaded", () => {
   menuToggle();
   escapeMenu();
 });
+
+function initPrice() {
+  const root = document.querySelector(".pricing__block");
+  if (!root) return;
+  const toggle = root.querySelector(".toggle__button");
+  console.log(root, toggle);
+
+  // const isActiveToggle = root.classList.toggle("toggle__price");
+  toggle.addEventListener("click", () => {
+    root.classList.toggle("toggle-price");
+  });
+}
+initPrice();
