@@ -877,7 +877,8 @@ a {
           &::before {
             position: absolute;
             content: "";
-            width: 100%; /* Исправлено на 100%, чтобы не вылезало за рамки */
+            /* Исправлено на 100%, чтобы не вылезало за рамки */
+            width: 100%;
             height: 6px;
             background: linear-gradient(
               53deg,
@@ -885,7 +886,8 @@ a {
               #bc7198 50%,
               #5a77ff 100%
             );
-            inset: 0 0 auto 0; /* Прижимает к верхнему краю */
+            /* Прижимает к верхнему краю */
+            inset: 0 0 auto 0;
           }
 
           /* Кнопка внутри PRO плана */
@@ -1010,53 +1012,64 @@ a {
       letter-spacing: 4.16667px;
       margin-block-end: 56px;
     }
-    h5,
-    p {
-      font-weight: 700;
-      font-size: 12px;
-      line-height: 135%;
-      letter-spacing: 2px;
+    .table__container {
+      width: 100%;
+      overflow-x: auto;
+
+      .compare__table {
+        width: 100%;
+        border-collapse: collapse;
+        max-width: 751px;
+        margin: 0 auto;
+        padding-inline: 10px;
+        font-family: "DM Sans";
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 135%;
+        letter-spacing: 2px;
+
+        thead {
+          border-bottom: 1px solid var(--neutral-950);
+
+          th {
+            width: 140px;
+            padding-block-end: 23px;
+          }
+        }
+
+        tbody {
+          td {
+            padding-block: 23px;
+            vertical-align: middle;
+            border-bottom: 1px solid var(--neutral-300);
+          }
+
+          td:first-child {
+            width: 231px;
+          }
+
+          /* Новый класс для центрирования содержимого внутри ячеек */
+          .table__cell-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .visually-hidden {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          border: 0;
+        }
+      }
     }
-    .resp-tab {
-    border-radius: 5px;
-    font-weight: normal;
-    border: none;
-    border-collapse: collapse;
-    width: 100%;
-    max-width: 100%;
-}
-.resp-tab th, .resp-tab td {
-    padding: 10px 20px;
-    font-size: 13px;
-    border: none;
-    font-family: Verdana, sans-serif;   
-    border: 1px solid #337AB7;
-    vertical-align: top;
-}
-.resp-tab th {
-    color: #FFF;
-    background: #337AB7;
-    font-weight: bold;
-    border: 1px solid #1a4a73;   
-    text-transform: uppercase;   
-    text-align: center;   
-}
-.resp-tab tr:nth-child(even) {
-    background: #edf7ff;
-}
-.resp-tab td span {
-    background: #337AB7;
-    color: #FFF;
-    display: none;
-    font-size: 11px;
-    font-weight: bold;
-    font-family: Verdana, sans-serif;   
-    text-transform: uppercase;       
-    padding: 5px 10px;
-    position: absolute;
-    top: 0;
-    left: 0;   
-}
   }
   /* .compare__table {
     max-width: 731px;
@@ -1720,6 +1733,10 @@ a {
             max-width: 318px;
             height: 407px;
             padding: 47px 36.5px;
+            &::before {
+              width: 100%;
+              height: 6px;
+            }
           }
           .tariff__plan-wrap {
             flex-direction: column;
@@ -1754,6 +1771,111 @@ a {
         flex-direction: column;
         gap: 24px;
         padding: 64px 33px;
+      }
+    }
+    .pricing__compare {
+      margin-block-end: 63.5px;
+      h2 {
+        display: none;
+      }
+      .table__container {
+        .compare__table {
+          thead,
+          tr,
+          th:first-child {
+            display: block;
+            width: 100%;
+          }
+          display: block;
+          thead {
+            /* Скрываем десктопную шапку  */
+            tr {
+              padding-block: 0;
+              th {
+                &:not(:first-child) {
+                  display: none;
+                }
+              }
+            }
+          }
+          tbody,
+          tr {
+            display: block;
+            width: 100%;
+          }
+          tr {
+            padding-block: 24px;
+            border-bottom: 1px solid var(--neutral-300);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px 0;
+          }
+          tbody {
+            td {
+              display: block;
+              padding: 0;
+              border: none;
+              text-align: center;
+              &:first-child {
+                width: 100%;
+                /*Растягиваем на всю ширину (все 3 колонки)  */
+                grid-column: 1 / -1;
+                text-align: left;
+                font-size: 12px;
+                letter-spacing: 2px;
+                color: var(--neutral-950);
+                margin-bottom: 16.5px;
+              }
+              &:not(:first-child) {
+                /* Резервируем место, чтобы пустые ячейки не схлопывались */
+                min-height: 40px;
+                display: flex;
+                flex-direction: column;
+                /* align-items: center; */
+                align-items: start;
+                justify-content: flex-start;
+                /* Отступ между словом "BASIC" и галочкой */
+                gap: 8px;
+                /* Добавляем текстовые подписи "BASIC", "PRO", "BUSINESS" над каждой ячейкой */
+                &::before {
+                  font-weight: 700;
+                  font-size: 10px;
+                  line-height: 13px;
+                  letter-spacing: 1.66667px;
+                  color: var(--neutral-950);
+                  mix-blend-mode: normal;
+                  opacity: 0.5;
+                }
+              }
+            }
+            /* Стили для самой иконки-галочки на мобилках */
+            .table__cell-center {
+              width: 100%;
+              height: auto;
+              justify-content: start;
+            }
+          }
+          /* Связываем
+            каждую
+            из
+            трех
+            ячеек
+            со
+            своим
+            тарифом
+            по
+            порядковому
+            номеру */
+          tbody td:nth-child(2)::before {
+            content: "BASIC";
+          }
+          tbody td:nth-child(3)::before {
+            content: "PRO";
+          }
+          tbody td:nth-child(4)::before {
+            content: "BUSINESS";
+          }
+        }
       }
     }
   }
