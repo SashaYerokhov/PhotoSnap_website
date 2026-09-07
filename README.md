@@ -6,14 +6,14 @@ In this challenge, you'll be building the marketing site for a photo-sharing app
 
 ### Screenshot
 
-![](./screenshot_1.jpg)
-![](./screenshot_2.jpg)
+![](./Screenshot_1.jpg)
+![](./Screenshot_2.jpg)
 
 
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: (https://sashayerokhov.github.io/PhotoSnap_website/)
 
 ## My process
 
@@ -26,9 +26,8 @@ In this challenge, you'll be building the marketing site for a photo-sharing app
 
 ## Author
 
-- Website - (https://sashayerokhov.github.io/PhotoSnap_website/)
 - Frontend Mentor - (https://github.com/SashaYerokhov/PhotoSnap_website)
 
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+
 
